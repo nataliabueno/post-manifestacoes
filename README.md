@@ -1,0 +1,12 @@
+# Quem protesta no Brasil? Comparação entre 20 de Junho de 2013,  13 e 15 de Março de 2015 e a população. 
+
+Material de replicação para o post sobre o perfil dos manifestantes de 20 de junho de 2013, 13 e 15 de março de 2015.
+Post publicado no blog [Sociais e Métodos](https://sociaisemetodos.wordpress.com/) por [Natália S. Bueno](http://nataliabueno.github.io/) e [Rogério Jerônimo Barbosa](https://scholar.google.com.br/citations?user=_GGcZ8PnOA0C&hl=en). 
+
+Uma breve nota metodológica:
+
+As informações que utilizamos sobre as manifestações se baseiam única e exclusivamente nos relatórios e reportagens de jornal. Infelizmente, não tivemos acesso aos microdados nem a detalhes sobre o plano amostral. Isso nos trouxe sérias dúvidas. Em primeiro lugar, não sabemos se as categorias “Fundamental”, “Médio” e “Superior” do quesito sobre escolarização diz respeito aos níveis de ensino completos ou se englobam também níveis incompletos. Assumimos que a categoria “Fundamental” agrega pessoas com fundamental completo ou menos. As demais categorias foram tratadas como dizendo respeito apenas aos níveis completos. De todo modo, as conclusões não se alteram se outra categorização for feita. Também não sabemos se a variável “renda” das pesquisas se refere à renda individual (do trabalho ou de todas as fontes) ou então à renda domiciliar (total ou per capita). Ou seja, há quatro interpretações possíveis! Testamos com a renda individual de todas as fontes e com a renda domiciliar per capita (apesar de que no post só apresentamos o primeiro resultado). Os dados do Censo de 2010 foram baixados diretamente do site do IBGE. Disponibilizamos códigos em R para replicação completa das análises no nosso repositório no Github. Há 3 scripts:
+
+1. SAScii.csv2.R : Trata-se de uma função que lê os microdados originais não formatados (em formato txt ) e os salva num arquivo do tipo CSV (separado por ponto-e-vírgula). É um código adaptado de Anthony Damico. Essa função é chamada automaticamente a partir do script “1 - Lendo Censo 2010 - RAW para CSV.R”
+2. Lendo Censo 2010 - RAW para CSV.R : Script que faz download dos dados do Censo 2010 para as UFs desejadas, aplica a função SAScii.csv2, faz uma seleção de casos (apenas capitais) e variáveis desejadas, procede recodificações e depois salva os arquivos em uma pasta.
+3.  Analise do Censo.R: Script que abre o banco preparado pelo script anterior e executa análises descritivas simples.
